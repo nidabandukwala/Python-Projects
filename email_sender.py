@@ -4,13 +4,13 @@ from pathlib import Path
 from string import Template
 
 
-html = Template(Path("index.html").read_text())
+'''html = Template(Path("index.html").read_text())'''
 email = EmailMessage()
 email['from']= 'Nida Bandukwala'
 email['to']= '' // add email of recipient
 email['subject']='helllloooo'
 
-email.set_content(html.substitute(name ="nida", age = '19', university = 'McMaster University'))
+email.set_content('Testing the file')
 
 with smtplib.SMTP(host='smtp.gmail.com',port = 587) as smtp:
 	smtp.ehlo()
